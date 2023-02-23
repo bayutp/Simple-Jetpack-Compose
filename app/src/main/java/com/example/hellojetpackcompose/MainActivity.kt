@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.outlined.ExpandMore
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -86,7 +87,7 @@ fun GreetingList(names: List<String>) {
 
 @Composable
 fun Greeting(name: String) {
-    var isExpanded by remember {
+    var isExpanded by rememberSaveable {
         mutableStateOf(false)
     }
     val animatedSizeDp by animateDpAsState(
